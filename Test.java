@@ -10,11 +10,10 @@ import java.io.IOException;
 
 /**
  *
- * @author babacar
+ * @author ouz
  */
 public class Test {
     public static void main(String arg[]) throws IOException{
         Copy.copier();
-		//test commit
     }
 }
