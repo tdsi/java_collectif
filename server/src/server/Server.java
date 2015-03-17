@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package server;
 
 import java.io.IOException;
 import java.io.InputStream;
+import static java.lang.System.exit;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.net.ssl.SSLServerSocket;
 
 /**
@@ -21,14 +23,11 @@ public class Server {
     /**
      * @param args the command line arguments
      */
+    Socket s;
+
     public static void main(String[] args) throws IOException {
-        // TODO code application logic here
-        ServerSocket ss=new ServerSocket(2015);
-        System.out.println("Init du Server");
-        Socket s=ss.accept();
-        System.out.println("connexion acceptee");
-        new Reception(s).start();
-        new Emission(s).start();
+
+     MessengerTool.demarrer("127.0.0.1", 5001);
     }
-    
+
 }
